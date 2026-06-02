@@ -19,6 +19,11 @@ class FOA_Activator
      */
     public static function activate()
     {
+        if (class_exists('FOA_Claims')) {
+            $claims = new FOA_Claims();
+            $claims->register_post_type();
+        }
+
         flush_rewrite_rules();
     }
 }

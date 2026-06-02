@@ -1,1 +1,43 @@
-/* Public styles for Festival Organizer Access. */
+.foa-claim-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 4px;
+    background: #111827;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.foa-claim-button:hover,
+.foa-claim-button:focus {
+    background: #374151;
+    color: #fff;
+}
+
+.foa-notice {
+    padding: 14px 16px;
+    border-left: 4px solid #6b7280;
+    background: #f9fafb;
+}
+
+.foa-notice-success {
+    border-left-color: #15803d;
+}
+
+.foa-claim-form {
+    max-width: 680px;
+}
+
+.foa-claim-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.foa-claim-form input,
+.foa-claim-form textarea {
+    width: 100%;
+}
