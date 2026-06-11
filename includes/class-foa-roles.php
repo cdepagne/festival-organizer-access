@@ -43,6 +43,12 @@ class FOA_Roles
             return;
         }
 
-        $user->set_role(self::ORGANIZER_ROLE);
+        if (in_array('administrator', (array) $user->roles, true)) {
+            return;
+        }
+
+        if (!in_array(self::ORGANIZER_ROLE, (array) $user->roles, true)) {
+            $user->add_role(self::ORGANIZER_ROLE);
+        }
     }
 }
