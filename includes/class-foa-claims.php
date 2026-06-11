@@ -145,12 +145,7 @@ class FOA_Claims
                 <option value="<?php echo esc_attr(self::STATUS_REJECTED); ?>" <?php selected($status, self::STATUS_REJECTED); ?>><?php esc_html_e('Refusee', 'festival-organizer-access'); ?></option>
             </select>
         </p>
-        <p>
-            <label>
-                <input type="checkbox" name="foa_grant_subscription" value="1">
-                <?php esc_html_e('Activer aussi l abonnement annuel pour cet utilisateur', 'festival-organizer-access'); ?>
-            </label>
-        </p>
+        <p><?php esc_html_e('En acceptant la demande, l utilisateur recevra le role Organisateur Festival. Si aucun abonnement n existe encore, sa premiere annee gratuite sera activee automatiquement.', 'festival-organizer-access'); ?></p>
         <?php
     }
 
@@ -198,8 +193,9 @@ class FOA_Claims
             update_post_meta($festival_id, FOA_Access::FESTIVAL_OWNER_META, $user_id);
         }
 
-        if ($user_id && isset($_POST['foa_grant_subscription'])) {
-            FOA_Access::grant_annual_subscription($user_id);
+        if ($user_id) {
+            FOA_Roles::assign_organizer_role($user_id);
+            FOA_Access::grant_free_first_year($user_id);
         }
     }
 

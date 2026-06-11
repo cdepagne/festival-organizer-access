@@ -13,6 +13,7 @@ require_once FOA_PLUGIN_DIR . 'admin/class-foa-admin.php';
 require_once FOA_PLUGIN_DIR . 'includes/class-foa-access.php';
 require_once FOA_PLUGIN_DIR . 'includes/class-foa-acf-fields.php';
 require_once FOA_PLUGIN_DIR . 'includes/class-foa-claims.php';
+require_once FOA_PLUGIN_DIR . 'includes/class-foa-roles.php';
 require_once FOA_PLUGIN_DIR . 'includes/class-foa-settings.php';
 require_once FOA_PLUGIN_DIR . 'public/class-foa-public.php';
 
@@ -51,6 +52,7 @@ class FOA_Plugin
     {
         $claims = new FOA_Claims();
 
+        add_action('init', array('FOA_Roles', 'register_roles'));
         add_action('init', array($claims, 'register_post_type'));
         add_action('init', array($claims, 'handle_claim_submission'));
     }

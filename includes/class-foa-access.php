@@ -63,6 +63,22 @@ class FOA_Access
     }
 
     /**
+     * Grants the free first year when no subscription exists yet.
+     *
+     * @param int $user_id User ID.
+     */
+    public static function grant_free_first_year($user_id)
+    {
+        $expires_at = get_user_meta($user_id, self::SUBSCRIPTION_EXPIRES_META, true);
+
+        if (!empty($expires_at)) {
+            return;
+        }
+
+        self::grant_annual_subscription($user_id);
+    }
+
+    /**
      * Returns whether a user can edit a festival through this plugin.
      *
      * @param int $user_id User ID.

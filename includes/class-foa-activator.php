@@ -19,6 +19,10 @@ class FOA_Activator
      */
     public static function activate()
     {
+        if (class_exists('FOA_Roles')) {
+            FOA_Roles::register_roles();
+        }
+
         if (class_exists('FOA_Claims')) {
             $claims = new FOA_Claims();
             $claims->register_post_type();

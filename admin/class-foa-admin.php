@@ -81,7 +81,8 @@ class FOA_Admin
             <ol>
                 <li><?php esc_html_e('L organisateur reclame un festival depuis une page separee.', 'festival-organizer-access'); ?></li>
                 <li><?php esc_html_e('Vous acceptez ou refusez la demande dans les reclamations.', 'festival-organizer-access'); ?></li>
-                <li><?php esc_html_e('La modification reste conditionnee a l abonnement annuel.', 'festival-organizer-access'); ?></li>
+                <li><?php esc_html_e('Une demande acceptee attribue le role Organisateur Festival et active la premiere annee gratuite.', 'festival-organizer-access'); ?></li>
+                <li><?php esc_html_e('Le renouvellement sera ensuite conditionne a l abonnement annuel payant.', 'festival-organizer-access'); ?></li>
             </ol>
         </div>
         <?php
@@ -132,6 +133,7 @@ class FOA_Admin
                                 class="small-text"
                             >
                             <span><?php esc_html_e('EUR', 'festival-organizer-access'); ?></span>
+                            <p class="description"><?php esc_html_e('Ce montant servira au renouvellement annuel apres la premiere annee gratuite.', 'festival-organizer-access'); ?></p>
                         </td>
                     </tr>
                     <tr>

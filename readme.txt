@@ -18,7 +18,9 @@ Le workflow prevu est le suivant:
 1. Le festival est cree et valide par l administrateur.
 2. L organisateur reclame le droit de modifier le festival.
 3. L administrateur accepte ou refuse la demande.
-4. La modification reste reservee aux organisateurs valides avec abonnement annuel actif.
+4. Une demande acceptee attribue le role Organisateur Festival.
+5. La premiere annee est offerte automatiquement.
+6. Le renouvellement annuel sera ensuite conditionne a un abonnement de 20 EUR.
 
 Shortcodes disponibles:
 
@@ -38,3 +40,4 @@ Shortcodes disponibles:
 * Ajout du socle initial du plugin.
 * Ajout des demandes de reclamation de festival.
 * Ajout de la logique d abonnement annuel actif.
+* Ajout du role Organisateur Festival et de la premiere annee gratuite.
